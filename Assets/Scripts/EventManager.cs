@@ -12,7 +12,7 @@ using System.Linq;
     triggering events in the game world.
  */
 
-class EventManager : MonoBehaviour
+public class EventManager : MonoBehaviour
 {
     [SerializeField] string[] event_names;
     Dictionary<string, UnityEvent> events;
@@ -26,19 +26,19 @@ class EventManager : MonoBehaviour
         }
     }
 
-    void AddListener(string name, UnityAction call)
+    public void AddListener(string name, UnityAction call)
     {
         if (!events.ContainsKey(name)) { return; }
         events[name].AddListener(call);
     }   
 
-    void RemoveListener(string name, UnityAction call)
+    public void RemoveListener(string name, UnityAction call)
     {
         if (!events.ContainsKey(name)) { return; }
         events[name].RemoveListener(call);
     }
 
-    void Invoke(string name)
+    public void Invoke(string name)
     {
         events[name].Invoke();
     }
