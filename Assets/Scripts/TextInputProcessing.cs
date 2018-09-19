@@ -14,14 +14,29 @@ public class Transition
 								  // change, defaults to -1 (no change)
 	public List<string> messages; // a list of messages to get sent on transition. This is supposed to
 								  // basically just give a way to call functions and trigger events in
-}
+
+	public Transition() 
+	{
+		inputs = new List<string>();
+		outputs = new List<string>();
+		scene_transition = -1;
+		messages = new List<string>();
+	}
+	}
 
 // should probably have some functions in here to return the transition state
 public class Node
 {
 	public string name;
 	public string text;
-	public Transition[] transitions;
+	public List<Transition> transitions;
+
+	public Node()
+	{
+		name = "";
+		text = "";
+		transitions = new List<Transition>();
+	}
 
 	public string GetNextNode(string input, EventManager event_manager)
 	{
@@ -33,7 +48,7 @@ public class Node
 				{
 					// select an output, trigger any events, and do any scene transitions
 					if (t.scene_transition != -1) { SceneManager.LoadScene(t.scene_transition); }
-					foreach (string m in t.messages) { event_manager.Invoke(m); }
+					foreach 	(string m in t.messages) { event_manager.Invoke(m); }
 					return t.outputs[Random.Range(0, t.outputs.Count)];
 				}
 			}
@@ -45,29 +60,29 @@ public class Node
 public class TextInputProcessing : MonoBehaviour {
 
 	[SerializeField] string file;
+	[SerializeField] string start_node;
 	[SerializeField] InputField input;
 	[SerializeField] Text display_text;
 
-	EventManager event_manager;
+	[SerializeField] EventManager event_manager;
 
 	Dictionary<string, Node> graph;
 	string current_node;
 
-	void Awake () 
-	{ 
-		event_manager = GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>(); 
-	}
-
 	void Start () 
 	{
-		// Open the XML file, load every node into the dictionary, and set 
-		// current_node to the starting node in the graph
-		graph = new Dictionary<string, Node>();
+		graph = XMLParser.xmlParse();
+		foreach (string key in graph.Keys)
+		{
+			Debug.Log(key);
+		}
 		input.onEndEdit.AddListener(
 			(value) => {
 				TryNodeTransition(value);
 			}
 		);
+		current_node = start_node;
+		DisplayText(graph[current_node].text);
 	}
 	
 	// Display some bit of text
@@ -79,7 +94,9 @@ public class TextInputProcessing : MonoBehaviour {
 	// trys to use the input to transition to a new text node
 	void TryNodeTransition(string input)
 	{
+		
 		string n = graph[current_node].GetNextNode(input, event_manager);
+		Debug.Log("AAAAAA");
 		if (n != "")
 		{
 			current_node = n;
