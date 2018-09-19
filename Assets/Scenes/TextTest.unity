@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -672,7 +672,7 @@ MonoBehaviour:
   start_node: Bedroom_Morning
   input: {fileID: 1935914000}
   display_text: {fileID: 561134693}
-  event_manager: {fileID: 0}
+  event_manager: {fileID: 2145960446}
 --- !u!4 &1737552555
 Transform:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 2145960447}
   - component: {fileID: 2145960446}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EventManager
   m_TagString: EventManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,7 +847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f1ab8e69495c54eb7fab73a581b4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  event_names: []
+  event_names:
+  - WAKE.UP
 --- !u!4 &2145960447
 Transform:
   m_ObjectHideFlags: 0

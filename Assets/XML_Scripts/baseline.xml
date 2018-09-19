@@ -6,7 +6,7 @@
         <transition>
             <input>leave bed</input>
             <output>Left_Bed</output>
-            <scene_trans>1</scene_trans>
+            <scene_trans>-1</scene_trans>
             <message>WAKE.UP</message>
         </transition>
     </node>
