@@ -1,87 +1,115 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-[System.Serializable]
-public class TextTransition
+
+public class Transition
 {
-	public string input;
-	public int node;
-}
+	public List<string> inputs;   // the strings that can be entered to trigger this transition
+	public List<string> outputs;  // the nodes the transition can go to
+	public int scene_transition;  // the scene to transition to if this transition triggers a scene 
+								  // change, defaults to -1 (no change)
+	public List<string> messages; // a list of messages to get sent on transition. This is supposed to
+								  // basically just give a way to call functions and trigger events in
 
-// for this, each node in this "graph" correlates to some bit of text input. For
-// now it's matching the text exactly, but this could be made more robust if we
-// need it. 
-//
-// The TextTest scene has a demo of how it works and hopefully that demo's pretty
-// clear, it's just the text that displays, and then that text being entered will
-// transition between other numbered nodes in the array. Again, we could make 
-// that interface nicer if we need to (which we probably will)
-[System.Serializable]
-public class TextNode
-{
-	public string text;
-	public TextTransition[] transitions;
-	private Dictionary<string, int> transition_dict = null;
-
-	// should update this to be safer
-	public void LoadTransitions()
+	public Transition() 
 	{
-		transition_dict = new Dictionary<string, int>();
-		foreach (TextTransition t in transitions)
-		{
-			transition_dict.Add(t.input, t.node);
-		}
+		inputs = new List<string>();
+		outputs = new List<string>();
+		scene_transition = -1;
+		messages = new List<string>();
+	}
 	}
 
-	public int GetTransition(string input)
+// should probably have some functions in here to return the transition state
+public class Node
+{
+	public string name;
+	public string text;
+	public List<Transition> transitions;
+
+	public Node()
 	{
-		if (!transition_dict.ContainsKey(input)) { return -1; }
-		return transition_dict[input];
+		name = "";
+		text = "";
+		transitions = new List<Transition>();
+	}
+
+	public string GetNextNode(string input, EventManager event_manager)
+	{
+		foreach (Transition t in transitions)
+		{
+			foreach (string i in t.inputs)
+			{
+				if (i.ToLower() == input.ToLower())
+				{
+					// select an output, trigger any events, and do any scene transitions
+					if (t.scene_transition != -1) { SceneManager.LoadScene(t.scene_transition); }
+					foreach 	(string m in t.messages) { event_manager.Invoke(m); }
+					return t.outputs[Random.Range(0, t.outputs.Count)];
+				}
+			}
+		}
+		return "";
 	}
 }
 
 public class TextInputProcessing : MonoBehaviour {
 
-	[SerializeField] TextNode[] text_graph;
+	[SerializeField] string file;
+	[SerializeField] string start_node;
 	[SerializeField] InputField input;
 	[SerializeField] Text display_text;
 
-	int index = 0;
+	[SerializeField] EventManager event_manager;
+
+	Dictionary<string, Node> graph;
+	string current_node;
 
 	void Start () 
 	{
-		// process each node
-		foreach (TextNode t in text_graph)
+		graph = XMLParser.xmlParse();
+		foreach (string key in graph.Keys)
 		{
-			t.LoadTransitions();
+			Debug.Log(key);
 		}
-		// set up listener on command enter
 		input.onEndEdit.AddListener(
-			(value) => 
-			{
-				int new_index = text_graph[index].GetTransition(value);
-				TryNodeTransition(new_index);
-				input.text = "";
+			(value) => {
+				TryNodeTransition(value);
 			}
 		);
-		display_text.text = text_graph[index].text;
+		current_node = start_node;
+		DisplayText(graph[current_node].text);
 	}
 	
-	// trys to use the input to transition to a new text node
-	void TryNodeTransition(int new_index)
+	// Display some bit of text
+	void DisplayText(string text)
 	{
-		if (new_index == -1)
+		display_text.text = text;
+	}
+
+	// trys to use the input to transition to a new text node
+	void TryNodeTransition(string input)
+	{
+		
+		string n = graph[current_node].GetNextNode(input, event_manager);
+		Debug.Log("AAAAAA");
+		if (n != "")
 		{
-			display_text.text = "I'm not sure what you mean...\n\n" 
-				+ text_graph[index].text;
+			current_node = n;
+			DisplayText(graph[current_node].text);
 		}
-		else
-		{
-			index = new_index;
-			display_text.text = text_graph[index].text;
-		}
+	}
+
+	// Interrupt the parsing, and switch directly to a given node
+	void Interrupt(string node)
+	{
+		DisplayText("");
+		current_node = node;
+		DisplayText(graph[current_node].text);
 	}
 
 }
