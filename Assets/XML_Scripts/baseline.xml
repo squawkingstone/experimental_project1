@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nodes>
-    <node>
-        <name>Bedroom_Morning</name>
-        <text>It's morning...</text>
-        <transition>
-            <input>leave bed</input>
-            <output>Left_Bed</output>
-            <scene_trans>1</scene_trans>
-            <message>WAKE.UP</message>
-        </transition>
-    </node>
-    <node>
-        <name>Left_Bed</name>
-        <text>Unfortunately, you left your bed</text>
-    </node>
   <node>
     <name>Start</name>
     <text> Before we begin this game, we would like to make sure we represent you as closely as possible in this game. So, we’d like to know what you look like.
