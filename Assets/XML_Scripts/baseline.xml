@@ -67,15 +67,24 @@
   </node>
   <node>
     <name>WakeUp</name>
-    <text>I wake up to my alarm. It’s 6 am. Time to get ready for work. I debate laying in bed for a bit, but I need the money. I get up. I need to get dressed, brush my teeth, and eat breakfast. What do I do first?
+    <text>
+      You wake up to your alarm. It’s 6 am. Time to get ready for work. You debate laying in bed for a bit, but you need the money. You get up.
     </text>
+    <transition>
+      <output>choices</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>choices</name>
+    <text>You need to get dressed, brush your teeth, and eat breakfast. What do you do first?</text>
     <transition>
       <input>Eat Breakfast</input>
       <output>Breakfast</output>
       <scene_trans>-1</scene_trans>
     </transition>
     <transition>
-      <input>Brush my teeth</input>
+      <input>Brush your teeth</input>
       <output>teeth</output>
       <scene_trans>-1</scene_trans>
     </transition>
@@ -87,33 +96,33 @@
   </node>
   <node>
     <name>Breakfast</name>
-    <text>I grab a bowl and a box of cereal. Not the healthiest, but its quick. I open the fridge, but there's no milk. I make a mental note to buy more milk as I crunch the dry cereal. Now what should I do now?
+    <text>You grab a bowl and a box of cereal. Not the healthiest, but its quick. You open the fridge, but there's no milk. You make a mental note to buy more milk as you crunch the dry cereal. Now what should you do now?
     </text>
     <transition>
-      <output>WakeUp</output>
+      <output>choices</output>
       <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
     <name>teeth</name>
-    <text>I grab my toothbrush and squeeze some toothpaste onto it. I brush all the crud off my teeth quickly. After I rinse my mouth out, I check myself in the mirror. I comb my fingers through my hair quickly, before deciding I look fine. Now what should I do?</text>
+    <text>You grab your toothbrush and squeeze some toothpaste onto it. You brush all the crud off your teeth quickly. After you rinse your mouth out, you check myself in the mirror. you comb your fingers through your hair quickly, before deciding you look fine. Now what should you do?</text>
     <transition>
-      <output>WakeUp</output>
+      <output>choices</output>
       <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
     <name>dressed</name>
-    <text>I grab some jeans out of the closet and put them on.I look at my selection of identical work shirts and sigh. I just grab the first one and put it on. Now what should I do?
+    <text>You grab some jeans out of the closet and put them on. You look at your selection of identical work shirts and sigh. You just grab the first one and put it on. Now what should you do?
     </text>
     <transition>
-      <output>WakeUp</output>
+      <output>choices</output>
       <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
     <name>ToWork</name>
-    <text>Time to head out. I grab my keys from the peg near the door. I hop in the car and drive the 10 minutes to work. Traffic is just starting, so luckily, my commute is short.
+    <text>Time to head out. You grab your keys from the peg near the door. You hop in the car and drive the 10 minutes to work. Traffic is just starting, so luckily, your commute is short.
     </text>
     <transition>
       <output>AtWork</output>
@@ -122,7 +131,7 @@
   </node>
   <node>
     <name>AtWork</name>
-    <text> I pull into the small lot and head into the Mart. Paul, the night cashier, is sitting behind the counter reading a magazine. He looks up as the bell rings. He stands, grabs his bag from behind him, and clocks out. “See you tonight”, he says as he leaves. I clock in and make myself comfortable behind the counter.
+    <text> You pull into the small lot and head into the Mart. Paul, the night cashier, is sitting behind the counter reading a magazine. He looks up as the bell rings. He stands, grabs his bag from behind him, and clocks out. “See you tonight”, he says as he leaves. You clock in and make yourself comfortable behind the counter.
     </text>
     <transition>
       <output>5Dollar</output>
@@ -131,7 +140,7 @@
   </node>
   <node>
     <name>5Dollar</name>
-    <text> A man enters, grabs a reheated breakfast sandwich and a mediocre-at-best coffee, and steps up to the counter, waiting for me to scan his items.
+    <text> A man enters, grabs a reheated breakfast sandwich and a mediocre-at-best coffee, and steps up to the counter, waiting for you to scan his items.
     </text>
     <transition>
       <input>Scan items</input>
@@ -141,7 +150,7 @@
   </node>
   <node>
     <name>Scanning</name>
-    <text>I scan the items. As I do so, the man strikes up a conversation. “Did you see the game last night?”  “No,” I respond. “Oh,” the man says. He doesn’t say anything else. “That’ll be $3.50”, I say. He hands me a 5 dollar bill. I hand him his change, and he leaves. After him, a few more people enter. The morning rush is starting.
+    <text>You scan the items. As you do so, the man strikes up a conversation. “Did you see the game last night?”  “No,” you respond. “Oh,” the man says. He doesn’t say anything else. “That’ll be $3.50”, you say. He hands you a 5 dollar bill. You hand him his change, and he leaves. After him, a few more people enter. The morning rush is starting.
     </text>
     <transition>
       <output>Afternoon</output>
@@ -150,7 +159,7 @@
   </node>
   <node>
     <name>Afternoon</name>
-    <text>After a long hour and a half of scanning items and making change, the rush finally ends. I now have a few hours until the lunch rush, and I need to figure out what to do with my time. I could clean the store, restock, or just hang out and read.
+    <text>After a long hour and a half of scanning items and making change, the rush finally ends. You now have a few hours until the lunch rush, and you need to figure out what to do with your time. You could clean the store, restock, or just hang out and read.
     </text>
     <transition>
       <input>clean the store</input>
@@ -170,7 +179,7 @@
   </node>
   <node>
     <name>clean</name>
-    <text>I take out the mop and clean the floor. It's amazing how white the linoleum is when I wash away the dirt. It's also amazing how long it takes me to clean the stores three aisles. I plop down a wet floor sign to ward off any possible lawsuits.
+    <text>You take out the mop and clean the floor. It's amazing how white the linoleum is when you wash away the dirt. It's also amazing how long it takes you to clean the stores three aisles. You plop down a wet floor sign to ward off any possible lawsuits.
     </text>
     <transition>
       <output>lunch</output>
@@ -179,7 +188,7 @@
   </node>
   <node>
     <name>restock</name>
-    <text>I grab a few boxes from the back and make my way around the store, putting the new packages behind the old ones. I also top off the coffee in the container. Management doesn’t want us to waste coffee. I never drink the coffee here now that I know it's never cleaned.
+    <text>You grab a few boxes from the back and make your way around the store, putting the new packages behind the old ones. You also top off the coffee in the container. Management doesn’t want to waste coffee. You never drink the coffee here now that you know it's never cleaned.
     </text>
     <transition>
       <output>lunch</output>
@@ -188,7 +197,7 @@
   </node>
   <node>
     <name>read</name>
-    <text>I grab a magazine from the shelf. I don’t really care about the celebrity gossip, but it passes the time. And it means I know what everyone is talking about. If I talk to anyone, that is.
+    <text>You grab a magazine from the shelf. You don’t really care about the celebrity gossip, but it passes the time. And it means you know what everyone is talking about. If you talk to anyone, that is.
     </text>
     <transition>
       <output>lunch</output>
@@ -197,7 +206,7 @@
   </node>
   <node>
     <name>lunch</name>
-    <text>The lunch rush empties out the sandwich case, so I microwave some of the frozen ones in the back before putting them in the heated case. Now, I just have to pass the time before the evening rush. I could clean the store, restock, or just hang out and read.
+    <text>The lunch rush empties out the sandwich case, so you microwave some of the frozen ones in the back before putting them in the heated case. Now, you just have to pass the time before the evening rush. You could clean the store, restock, or just hang out and read.
     </text>
     <transition>
       <input>clean the store</input>
@@ -217,7 +226,7 @@
   </node>
   <node>
     <name>clean2</name>
-      <text>I take out the mop and clean the floor. It's amazing how white the linoleum is when I wash away the dirt. It's also amazing how long it takes me to clean the stores three aisles. I plop down a wet floor sign to ward off any possible lawsuits.
+      <text>You take out the mop and clean the floor. It's amazing how white the linoleum is when you wash away the dirt. It's also amazing how long it takes you to clean the stores three aisles. You plop down a wet floor sign to ward off any possible lawsuits.
       </text>
     <transition>
       <output>evening</output>
@@ -226,7 +235,7 @@
   </node>
   <node>
     <name>restock2</name>
-    <text>I grab a few boxes from the back and make my way around the store, putting the new packages behind the old ones. I also top off the coffee in the container. Management doesn’t want us to waste coffee. I never drink the coffee here now that I know it's never cleaned.
+    <text>You grab a few boxes from the back and make your way around the store, putting the new packages behind the old ones. You also top off the coffee in the container. Management doesn’t want to waste coffee. You never drink the coffee here now that I know it's never cleaned.
     </text>
     <transition>
       <output>evening</output>
@@ -235,7 +244,7 @@
   </node>
   <node>
     <name>read2</name>
-    <text>I grab a magazine from the shelf. I don’t really care about the celebrity gossip, but it passes the time. And it means I know what everyone is talking about. If I talk to anyone, that is.
+    <text>You grab a magazine from the shelf. You don’t really care about the celebrity gossip, but it passes the time. And it means you know what everyone is talking about. If you talk to anyone, that is.
     </text>
     <transition>
       <output>evening</output>
@@ -244,7 +253,7 @@
   </node>
   <node>
     <name>evening</name>
-    <text>The evening rush is much smaller than the other two, but it is still more than the two people that came in between the rushes. I finish ringing up the last person just as Paul enters. I nod to him and clock out. “You look exhausted,” Paul says, “Go get some sleep”.  As I turn on the car, I check my gas. Not too low. I can go another day at least until refilling it.
+    <text>The evening rush is much smaller than the other two, but it is still more than the two people that came in between the rushes. You finish ringing up the last person just as Paul enters. You nod to him and clock out. “You look exhausted,” Paul says, “Go get some sleep”.  As you turn on the car, you check my gas. Not too low. You can go another day at least until refilling it.
     </text>
     <transition>
       <output>dinner</output>
@@ -253,7 +262,7 @@
   </node>
   <node>
     <name>dinner</name>
-    <text>I put my keys on the peg by the door and head into the kitchen to make myself dinner. Should I make a microwave meal, or make something from scratch?
+    <text>You put my keys on the peg by the door and head into the kitchen to make yourself dinner. Should you make a microwave meal, or make something from scratch?
     </text>
     <transition>
       <input>microwave meal</input>
@@ -268,7 +277,7 @@
   </node>
   <node>
     <name>microwave</name>
-    <text> It may not be healthy, but it’s fast. Once it’s done, I plop myself down on the couch and watch some mindless TV. A good use of my precious time.
+    <text> It may not be healthy, but it’s fast. Once it’s done, you plop yourself down on the couch and watch some mindless TV. A good use of your precious time.
     </text>
     <transition>
       <output>ToBed</output>
@@ -277,7 +286,7 @@
   </node>
   <node>
     <name>scratch</name>
-    <text>It takes more effort, but I think it’s worth it. I follow the recipe and make myself a nice, hot meal. I sit down at the table and eat my dinner. It looks like I spent my evening making dinner today.
+    <text>It takes more effort, but you think it’s worth it. You follow the recipe and make yourself a nice, hot meal. You sit down at the table and eat your dinner. It looks like you spent your evening making dinner today.
     </text>
     <transition>
       <output>ToBed</output>
@@ -286,10 +295,10 @@
   </node>
   <node>
     <name>ToBed</name>
-    <text>It’s getting late now, so I need to get ready for bed. I need to brush my teeth, take a shower, and put on my PJ’s.
+    <text>It’s getting late now, so you need to get ready for bed. You need to brush your teeth, take a shower, and put on your PJ’s.
     </text>
     <transition>
-      <input>brush my teeth</input>
+      <input>brush your teeth</input>
       <output>brush</output>
       <scene_trans>-1</scene_trans>
     </transition>
@@ -306,7 +315,7 @@
   </node>
   <node>
     <name>brush</name>
-    <text>I take my time getting the food residue off my teeth. Shouldn’t let that sit on my teeth all night.
+    <text>You take your time getting the food residue off your teeth. Shouldn’t let that sit on your teeth all night.
     </text>
     <transition>
       <output>ToBed</output>
@@ -315,7 +324,7 @@
   </node>
   <node>
     <name>shower</name>
-    <text> I wash off the grime of the day. The warm water helps me feel sleepy and get to sleep faster. I look in the foggy mirror as I step out of the shower. Paul was right, I look exhausted.
+    <text> You wash off the grime of the day. The warm water helps you feel sleepy and get to sleep faster. You look in the foggy mirror as you step out of the shower. Paul was right, you look exhausted.
     </text>
     <transition>
       <output>ToBed</output>
@@ -324,7 +333,7 @@
   </node>
   <node>
     <name>jammies</name>
-    <text>I put on a comfy pair of pants and an old T-shirt. Now I’m ready to sleep.
+    <text>You put on a comfy pair of pants and an old T-shirt. Now you're ready to sleep.
     </text>
     <transition>
       <output>ToBed</output>
@@ -333,7 +342,7 @@
   </node>
   <node>
     <name>beddiebye</name>
-    <text>I check my alarm for the morning, then get in bed. I need to be well rested for work tomorrow.
+    <text>You check your alarm for the morning, then get in bed. You need to be well rested for work tomorrow.
     </text>
     <transition>
       <output>WakeUp</output>
