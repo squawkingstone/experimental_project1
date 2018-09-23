@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScaleTransitionMovement : MonoBehaviour {
 
-	[SerializeField] Vector2 start_pos;
+	[SerializeField] Vector3 start_pos;
 	[SerializeField] Vector2 start_scale;
-	[SerializeField] Vector2 end_pos;
+	[SerializeField] Vector3 end_pos;
 	[SerializeField] Vector2 end_scale;
 	[SerializeField] float time;
 
