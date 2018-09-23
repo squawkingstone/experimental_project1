@@ -14,4 +14,373 @@
         <name>Left_Bed</name>
         <text>Unfortunately, you left your bed</text>
     </node>
+  <node>
+    <name>Start</name>
+    <text> Before we begin this game, we would like to make sure we represent you as closely as possible in this game. So, we’d like to know what you look like.
+
+      What gender are you?</text>
+    <transition>
+      <output>Start2</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Start2</name>
+    <text> Alright. How tall are you?</text>
+    <transition>
+      <output>Start3</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Start3</name>
+    <text> I see. Now, what color are your eyes?</text>
+    <transition>
+      <output>Start4</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Start4</name>
+    <text> Oh, stunning! And what color is your hair?</text>
+    <transition>
+      <output>Start5</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Start5</name>
+    <text> A perfect match for your eyes. How long is your hair?</text>
+    <transition>
+      <output>Start6</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Start6</name>
+    <text>Very nice. How would you describe your face shape?</text>
+    <transition>
+      <output>Start7</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Start7</name>
+    <text>Lovely! Any other identifying features?</text>
+    <transition>
+      <output>Start8</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Start8</name>
+    <text>
+      Wow. I can see you now.
+
+      I’ll let you start your game now. I hope I captured you perfectly.
+    </text>
+    <transition>
+      <output>WakeUp</output>
+      <scene_trans>1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>WakeUp</name>
+    <text>
+      I wake up to my alarm. It’s 6 am. Time to get ready for work. I debate laying in bed for a bit, but I need the money. 
+      I get up. I need to get dressed, brush my teeth, and eat breakfast. What do I do first?
+    </text>
+    <transition>
+      <input>Eat Breakfast</input>
+      <output>Breakfast</output>
+      <input>Brush my teeth</input>
+      <output>teeth</output>
+      <input>Get dressed</input>
+      <output>dressed</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Breakfast</name>
+    <text>
+      I grab a bowl and a box of cereal. Not the healthiest, but its quick. I open the fridge, but there's no milk. 
+      I make a mental note to buy more milk as I crunch the dry cereal. Now what should I do now?
+    </text>
+    <transition>
+      <output>WakeUp</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>teeth</name>
+    <text>
+      I grab my toothbrush and squeeze some toothpaste onto it. I brush all the crud off my teeth quickly. 
+      After I rinse my mouth out, I check myself in the mirror. I comb my fingers through my hair quickly, before deciding I look fine.
+    Now what should I do?</text>
+    <transition>
+      <output>WakeUp</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>dressed</name>
+    <text>
+      I grab some jeans out of the closet and put them on.
+      I look at my selection of identical work shirts and sigh. I just grab the first one and put it on.
+      Now what should I do?
+    </text>
+    <transition>
+      <output>WakeUp</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>ToWork</name>
+    <text>
+      Time to head out. I grab my keys from the peg near the door. 
+      I hop in the car and drive the 10 minutes to work. Traffic is just starting, so luckily, my commute is short.
+    </text>
+    <transition>
+      <output>AtWork</output>
+      <scene_trans>2</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>AtWork</name>
+    <text>
+      I pull into the small lot and head into the Mart. Paul, the night cashier, is sitting behind the counter reading a magazine. He looks up as the bell rings. 
+      He stands, grabs his bag from behind him, and clocks out. “See you tonight”, he says as he leaves. I clock in and make myself comfortable behind the counter.
+    </text>
+    <transition>
+      <output>5Dollar</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>5Dollar</name>
+    <text>
+      A man enters, grabs a reheated breakfast sandwich and a mediocre-at-best coffee, and steps up to the counter, waiting for me to scan his items.
+    </text>
+    <transition>
+      <input>Scan items</input>
+      <output>Scanning</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Scanning</name>
+    <text>
+      I scan the items. As I do so, the man strikes up a conversation. “Did you see the game last night?” 
+      “No,” I respond. “Oh,” the man says. He doesn’t say anything else. 
+      “That’ll be $3.50”, I say. He hands me a 5 dollar bill. I hand him his change, and he leaves. After him, a few more people enter.
+      The morning rush is starting.
+    </text>
+    <transition>
+      <output>Afternoon</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>Afternoon</name>
+    <text>
+      After a long hour and a half of scanning items and making change, the rush finally ends. 
+      I now have a few hours until the lunch rush, and I need to figure out what to do with my time. 
+      I could clean the store, restock, or just hang out and read.
+    </text>
+    <transition>
+      <input>clean the store</input>
+      <output>clean</output>
+      <input>restock</input>
+      <output>restock</output>
+      <input>read</input>
+      <output>read</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>clean</name>
+    <text>
+      I take out the mop and clean the floor. It's amazing how white the linoleum is when I wash away the dirt. 
+      It's also amazing how long it takes me to clean the stores three aisles. I plop down a wet floor sign to ward off any possible lawsuits.
+    </text>
+    <transition>
+      <output>lunch</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>restock</name>
+    <text>
+      I grab a few boxes from the back and make my way around the store, putting the new packages behind the old ones. I also top off the coffee in the container. 
+      Management doesn’t want us to waste coffee. I never drink the coffee here now that I know it's never cleaned.
+    </text>
+    <transition>
+      <output>lunch</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>read</name>
+    <text>
+      I grab a magazine from the shelf. I don’t really care about the celebrity gossip, but it passes the time.
+      And it means I know what everyone is talking about. If I talk to anyone, that is.
+    </text>
+    <transition>
+      <output>lunch</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>lunch</name>
+    <text>
+      The lunch rush empties out the sandwich case, so I microwave some of the frozen ones in the back before putting them in the heated case.
+      Now, I just have to pass the time before the evening rush. I could clean the store, restock, or just hang out and read.
+    </text>
+    <transition>
+      <input>clean the store</input>
+      <output>clean2</output>
+      <input>restock</input>
+      <output>restock2</output>
+      <input>read</input>
+      <output>read2</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>clean2</name>
+      <text>
+         I take out the mop and clean the floor. It's amazing how white the linoleum is when I wash away the dirt.
+          It's also amazing how long it takes me to clean the stores three aisles. I plop down a wet floor sign to ward off any possible lawsuits.
+      </text>
+    <transition>
+      <output>evening</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>restock2</name>
+    <text>
+      I grab a few boxes from the back and make my way around the store, putting the new packages behind the old ones. I also top off the coffee in the container.
+      Management doesn’t want us to waste coffee. I never drink the coffee here now that I know it's never cleaned.
+    </text>
+    <transition>
+      <output>evening</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>read2</name>
+    <text>
+      I grab a magazine from the shelf. I don’t really care about the celebrity gossip, but it passes the time.
+      And it means I know what everyone is talking about. If I talk to anyone, that is.
+    </text>
+    <transition>
+      <output>evening</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>evening</name>
+    <text>
+      The evening rush is much smaller than the other two, but it is still more than the two people that came in between the rushes. I finish ringing up the last person just as Paul enters. 
+      I nod to him and clock out. “You look exhausted,” Paul says, “Go get some sleep”.  As I turn on the car, I check my gas. Not too low. I can go another day at least until refilling it.
+    </text>
+    <transition>
+      <output>dinner</output>
+      <scene_trans>1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>dinner</name>
+    <text>
+      I put my keys on the peg by the door and head into the kitchen to make myself dinner. 
+      Should I make a microwave meal, or make something from scratch?
+    </text>
+    <transition>
+      <input>microwave meal</input>
+      <output>microwave</output>
+      <input>make from scratch</input>
+      <output>scratch</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>microwave</name>
+    <text>
+      It may not be healthy, but it’s fast. Once it’s done, I plop myself down on the couch and watch some mindless TV. 
+      A good use of my precious time.
+    </text>
+    <transition>
+      <output>ToBed</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>scratch</name>
+    <text>
+      It takes more effort, but I think it’s worth it. I follow the recipe and make myself a nice, hot meal. 
+      I sit down at the table and eat my dinner. It looks like I spent my evening making dinner today.
+    </text>
+    <transition>
+      <output>ToBed</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>ToBed</name>
+    <text>
+      It’s getting late now, so I need to get ready for bed. 
+      I need to brush my teeth, take a shower, and put on my PJ’s.
+    </text>
+    <transition>
+      <input>brush my teeth</input>
+      <output>brush</output>
+      <input>take a shower</input>
+      <output>shower</output>
+      <input>put on pjs</input>
+      <output>jammies</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>brush</name>
+    <text>
+      I take my time getting the food residue off my teeth. Shouldn’t let that sit on my teeth all night.
+    </text>
+    <transition>
+      <output>ToBed</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>shower</name>
+    <text>
+      I wash off the grime of the day. The warm water helps me feel sleepy and get to sleep faster. 
+      I look in the foggy mirror as I step out of the shower. Paul was right, I look exhausted.
+    </text>
+    <transition>
+      <output>ToBed</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>jammies</name>
+    <text>
+      I put on a comfy pair of pants and an old T-shirt. Now I’m ready to sleep.
+    </text>
+    <transition>
+      <output>ToBed</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>beddiebye</name>
+    <text>
+      I check my alarm for the morning, then get in bed. I need to be well rested for work tomorrow.
+    </text>
+    <transition>
+      <output>WakeUp</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
 </nodes>
