@@ -41,6 +41,10 @@ public class Node
 	{
 		foreach (Transition t in transitions)
 		{
+			if (t.inputs.Count == 0)
+			{
+				return t.outputs[Random.Range(0, t.outputs.Count)];
+			}
 			foreach (string i in t.inputs)
 			{
 				if (i.ToLower() == input.ToLower())
@@ -48,9 +52,7 @@ public class Node
 					// select an output, trigger any events, and do any scene transitions
 					if (t.scene_transition != -1) { SceneManager.LoadScene(t.scene_transition); }
 					foreach (string m in t.messages) { event_manager.Invoke(m); }
-					string o = t.outputs[Random.Range(0, t.outputs.Count)];
-					Debug.Log(o);
-					return o;
+					return t.outputs[Random.Range(0, t.outputs.Count)];
 				}
 			}
 		}
