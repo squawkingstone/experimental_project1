@@ -19,7 +19,7 @@ public class ScaleTransitionMovement : MonoBehaviour {
 		transform.localScale = start_scale;
 		for (float t = 0f; t < time; t += Time.deltaTime)
 		{
-			transform.position = Vector2.Lerp(start_pos, end_pos, t / time);
+			transform.position = Vector3.Lerp(start_pos, end_pos, t / time);
 			transform.localScale = Vector2.Lerp(start_scale, end_scale, t / time);
 			yield return null;
 		}
