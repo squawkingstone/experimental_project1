@@ -66,6 +66,7 @@ public class TextInputProcessing : MonoBehaviour {
 	[SerializeField] string start_node;
 	[SerializeField] InputField input;
 	[SerializeField] Text display_text;
+	[SerializeField] float display_speed;
 
 	[SerializeField] EventManager event_manager;
 
@@ -80,6 +81,7 @@ public class TextInputProcessing : MonoBehaviour {
 			(value) => {
 				TryNodeTransition(value);
 				input.text = "";
+				input.ActivateInputField();
 			}
 		);
 		current_node = start_node;
@@ -89,7 +91,8 @@ public class TextInputProcessing : MonoBehaviour {
 	// Display some bit of text
 	void DisplayText(string text)
 	{
-		display_text.text = text;
+		StopAllCoroutines();
+		StartCoroutine(TypewriterDisplay(text));
 	}
 
 	// trys to use the input to transition to a new text node
@@ -114,6 +117,24 @@ public class TextInputProcessing : MonoBehaviour {
 		DisplayText("");
 		current_node = node;
 		DisplayText(graph[current_node].text);
+	}
+
+	private IEnumerator TypewriterDisplay(string text)
+	{
+		display_text.text = "";
+		yield return new WaitForEndOfFrame();
+		for (int i = 0; i < text.Length; i++)
+		{
+			display_text.text += text[i];
+			if (text[i] == ',' || text[i] == '.')
+			{
+				yield return new WaitForSeconds(5f/display_speed);
+			}
+			else
+			{
+				yield return new WaitForSeconds(1f/display_speed);
+			}
+		}
 	}
 
 }

@@ -176,6 +176,11 @@
       <output>read</output>
       <scene_trans>-1</scene_trans>
     </transition>
+    <transition>
+      <input>release your inhibitions</input>
+      <output>feeltherain</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
   </node>
   <node>
     <name>clean</name>
@@ -221,6 +226,11 @@
     <transition>
       <input>read</input>
       <output>read2</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
+      <input>release your inhibitions</input>
+      <output>feeltherain</output>
       <scene_trans>-1</scene_trans>
     </transition>
   </node>
@@ -343,6 +353,15 @@
   <node>
     <name>beddiebye</name>
     <text>You check your alarm for the morning, then get in bed. You need to be well rested for work tomorrow.
+    </text>
+    <transition>
+      <output>WakeUp</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+  </node>
+  <node>
+    <name>feeltherain</name>
+    <text>You head outside of the Mart. It's raining. Feel the rain on your skin. No one else can feel it for you. Only you can let it in. No one else, no one else can speak the words on your lips. 
     </text>
     <transition>
       <output>WakeUp</output>
