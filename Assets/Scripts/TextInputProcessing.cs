@@ -81,6 +81,7 @@ public class TextInputProcessing : MonoBehaviour {
 			(value) => {
 				TryNodeTransition(value);
 				input.text = "";
+				input.ActivateInputField();
 			}
 		);
 		current_node = start_node;
