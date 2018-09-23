@@ -672,6 +672,7 @@ MonoBehaviour:
   start_node: Bedroom_Morning
   input: {fileID: 1935914000}
   display_text: {fileID: 561134693}
+  display_speed: 25
   event_manager: {fileID: 2145960446}
 --- !u!4 &1737552555
 Transform:
