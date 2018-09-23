@@ -112,7 +112,7 @@ public class TextInputProcessing : MonoBehaviour {
 	}
 
 	// Interrupt the parsing, and switch directly to a given node
-	void Interrupt(string node)
+	public void Interrupt(string node)
 	{
 		DisplayText("");
 		current_node = node;
