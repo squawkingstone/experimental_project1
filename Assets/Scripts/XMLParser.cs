@@ -6,6 +6,7 @@ using System.Xml;
 using System.IO;
 
 public class XMLParser {
+
 	public static Dictionary<string, Node> xmlParse(){
 		string context = System.IO.File.ReadAllText("Assets\\XML_Scripts\\baseline.xml");
 		XmlDocument document = new XmlDocument();
@@ -17,11 +18,9 @@ public class XMLParser {
 			XmlNodeList content = node.ChildNodes;
 			foreach(XmlNode child in content){
 				if(child.Name == "name"){
-					Debug.Log(child.InnerText);
 					n.name = child.InnerText;
 				}
 				if(child.Name == "text"){
-					Debug.Log(child.InnerText);
 					n.text = child.InnerText;
 				}
 				if(child.Name == "transition"){

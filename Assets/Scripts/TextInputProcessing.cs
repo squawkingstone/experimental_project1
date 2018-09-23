@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class Transition
 {
 	public List<string> inputs;   // the strings that can be entered to trigger this transition
@@ -22,7 +21,7 @@ public class Transition
 		scene_transition = -1;
 		messages = new List<string>();
 	}
-	}
+}
 
 // should probably have some functions in here to return the transition state
 public class Node
@@ -42,13 +41,17 @@ public class Node
 	{
 		foreach (Transition t in transitions)
 		{
+			if (t.inputs.Count == 0)
+			{
+				return t.outputs[Random.Range(0, t.outputs.Count)];
+			}
 			foreach (string i in t.inputs)
 			{
 				if (i.ToLower() == input.ToLower())
 				{
 					// select an output, trigger any events, and do any scene transitions
 					if (t.scene_transition != -1) { SceneManager.LoadScene(t.scene_transition); }
-					foreach 	(string m in t.messages) { event_manager.Invoke(m); }
+					foreach (string m in t.messages) { event_manager.Invoke(m); }
 					return t.outputs[Random.Range(0, t.outputs.Count)];
 				}
 			}
@@ -72,13 +75,11 @@ public class TextInputProcessing : MonoBehaviour {
 	void Start () 
 	{
 		graph = XMLParser.xmlParse();
-		foreach (string key in graph.Keys)
-		{
-			Debug.Log(key);
-		}
+		Debug.Log("START");
 		input.onEndEdit.AddListener(
 			(value) => {
 				TryNodeTransition(value);
+				input.text = "";
 			}
 		);
 		current_node = start_node;
@@ -96,11 +97,14 @@ public class TextInputProcessing : MonoBehaviour {
 	{
 		
 		string n = graph[current_node].GetNextNode(input, event_manager);
-		Debug.Log("AAAAAA");
 		if (n != "")
 		{
 			current_node = n;
 			DisplayText(graph[current_node].text);
+		}
+		else
+		{
+			DisplayText("I'm sorry, I don't understand.\n\n" + graph[current_node].text);
 		}
 	}
 
