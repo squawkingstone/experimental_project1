@@ -93,8 +93,14 @@
     <transition>
       <input>Eat Breakfast</input>
       <output>Breakfast</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>Brush my teeth</input>
       <output>teeth</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>Get dressed</input>
       <output>dressed</output>
       <scene_trans>-1</scene_trans>
@@ -190,8 +196,14 @@
     <transition>
       <input>clean the store</input>
       <output>clean</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>restock</input>
       <output>restock</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>read</input>
       <output>read</output>
       <scene_trans>-1</scene_trans>
@@ -239,8 +251,14 @@
     <transition>
       <input>clean the store</input>
       <output>clean2</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>restock</input>
       <output>restock2</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>read</input>
       <output>read2</output>
       <scene_trans>-1</scene_trans>
@@ -299,6 +317,9 @@
     <transition>
       <input>microwave meal</input>
       <output>microwave</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>make from scratch</input>
       <output>scratch</output>
       <scene_trans>-1</scene_trans>
@@ -335,8 +356,14 @@
     <transition>
       <input>brush my teeth</input>
       <output>brush</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>take a shower</input>
       <output>shower</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
       <input>put on pjs</input>
       <output>jammies</output>
       <scene_trans>-1</scene_trans>
