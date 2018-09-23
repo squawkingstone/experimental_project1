@@ -100,6 +100,10 @@ public class TextInputProcessing : MonoBehaviour {
 			current_node = n;
 			DisplayText(graph[current_node].text);
 		}
+		else
+		{
+			DisplayText("I'm sorry, I don't understand.\n\n" + graph[current_node].text);
+		}
 	}
 
 	// Interrupt the parsing, and switch directly to a given node
