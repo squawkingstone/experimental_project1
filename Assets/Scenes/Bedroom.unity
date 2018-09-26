@@ -523,6 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731438039}
   - component: {fileID: 1731438038}
+  - component: {fileID: 1731438040}
   m_Layer: 0
   m_Name: Management
   m_TagString: Untagged
@@ -555,6 +556,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731438040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731438037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d954cbafca408e478963e1f2a8ee60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - limit: 30
+    node: ToWork
+  textManager: {fileID: 2074981691}
 --- !u!114 &1965006553 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114038661127850418, guid: 02e3f9827cf1d3f4390882f3b100b273,
