@@ -76,9 +76,10 @@
     <transition>
       <input>Eat Breakfast</input>
       <input>Breakfast</input>
-      <input>Eat</input>
       <input>Eat food</input>
+      <input>Eat</input>
       <input>Food</input>
+      <input>make breakfast</input>
       <output>Breakfast</output>
     </transition>
     <transition>
@@ -151,7 +152,7 @@
   </node>
   <node>
     <name>dressed</name>
-    <text>I grab some jeans out of the closet and put them on.I look at my selection of identical work shirts and sigh. I just grab the first one and put it on. Now what should I do?
+    <text>I grab some jeans out of the closet and put them on. I look at my selection of identical work shirts and sigh. I just grab the first one and put it on. Now what should I do?
     </text>
     <transition>
       <input>Eat Breakfast</input>
@@ -191,6 +192,8 @@
     </text>
     <transition>
       <output>5Dollar</output>
+      <message>PaulExit</message>
+      <message>5DollarEnter</message>
     </transition>
   </node>
   <node>
@@ -213,6 +216,7 @@
     </text>
     <transition>
       <output>Afternoon</output>
+      <message>5DollarExit</message>
     </transition>
   </node>
   <node>
@@ -297,6 +301,7 @@
       </text>
     <transition>
       <output>evening</output>
+      <message>PaulEnter</message>
     </transition>
   </node>
   <node>
@@ -305,6 +310,7 @@
     </text>
     <transition>
       <output>evening</output>
+      <message>PaulEnter</message>
     </transition>
   </node>
   <node>
@@ -313,6 +319,7 @@
     </text>
     <transition>
       <output>evening</output>
+      <message>PaulEnter</message>
     </transition>
   </node>
   <node>
@@ -392,26 +399,65 @@
   </node>
   <node>
     <name>brush</name>
-    <text>I take my time getting the food residue off my teeth. Shouldn’t let that sit on my teeth all night.
+    <text>I take my time getting the food residue off my teeth. Shouldn’t let that sit on my teeth all night. Now what do I do?
     </text>
     <transition>
-      <output>ToBed</output>
+      <input>take a shower</input>
+      <input>Shower</input>
+      <input>Take shower</input>
+      <input>bathe</input>
+      <output>shower</output>
+    </transition>
+    <transition>
+      <input>put on pjs</input>
+      <input>put on pajamas</input>
+      <input>get dressed</input>
+      <input>dress</input>
+      <input>get dressed for bed</input>
+      <input>dress for bed</input>
+      <input>put on jammies</input>
+      <input>put on pj's</input>
+      <output>jammies</output>
     </transition>
   </node>
   <node>
     <name>shower</name>
-    <text> I wash off the grime of the day. The warm water helps me feel sleepy and get to sleep faster. I look in the foggy mirror as I step out of the shower. Paul was right, I look exhausted.
+    <text> I wash off the grime of the day. The warm water helps me feel sleepy and get to sleep faster. I look in the foggy mirror as I step out of the shower. Paul was right, I look exhausted. What next?
     </text>
     <transition>
-      <output>ToBed</output>
+      <input>brush my teeth</input>
+      <input>Brush Teeth</input>
+      <input>Teeth</input>
+      <output>brush</output>
+    </transition>
+    <transition>
+      <input>put on pjs</input>
+      <input>put on pajamas</input>
+      <input>get dressed</input>
+      <input>dress</input>
+      <input>get dressed for bed</input>
+      <input>dress for bed</input>
+      <input>put on jammies</input>
+      <input>put on pj's</input>
+      <output>jammies</output>
     </transition>
   </node>
   <node>
     <name>jammies</name>
-    <text>I put on a comfy pair of pants and an old T-shirt. Now I’m ready to sleep.
+    <text>I put on a comfy pair of pants and an old T-shirt. Now I’m ready to sleep. What do I do now?
     </text>
     <transition>
-      <output>ToBed</output>
+      <input>brush my teeth</input>
+      <input>Brush Teeth</input>
+      <input>Teeth</input>
+      <output>brush</output>
+    </transition>
+    <transition>
+      <input>take a shower</input>
+      <input>Shower</input>
+      <input>Take shower</input>
+      <input>bathe</input>
+      <output>shower</output>
     </transition>
   </node>
   <node>
@@ -419,7 +465,17 @@
     <text>I check my alarm for the morning, then get in bed. I need to be well rested for work tomorrow.
     </text>
     <transition>
-      <output>WakeUp</output>
+      <input>sleep</input>
+      <input>go to sleep</input>
+      <output>sleeping</output>
+      <message>FadeOut</message>
+    </transition>
+  </node>
+  <node>
+    <name>sleeping</name>
+    <text></text>
+    <transition>
+      <scene_trans>Bedroom</scene_trans>
     </transition>
   </node>
 </nodes>
