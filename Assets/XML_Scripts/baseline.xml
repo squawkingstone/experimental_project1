@@ -6,6 +6,7 @@
     <transition>
       <input>Start</input>
       <output>Start</output>
+      <scene_trans>Beginning</scene_trans>
     </transition>
   </node>
   <node>
@@ -48,7 +49,6 @@
     <text>Very nice. How would you describe your face shape?</text>
     <transition>
       <output>Start7</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
