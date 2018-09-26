@@ -377,6 +377,20 @@ Prefab:
       propertyPath: m_FontData.m_RichText
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1546931223900414, guid: 02e3f9827cf1d3f4390882f3b100b273, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224850231975626342, guid: 02e3f9827cf1d3f4390882f3b100b273,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224850231975626342, guid: 02e3f9827cf1d3f4390882f3b100b273,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e3f9827cf1d3f4390882f3b100b273, type: 2}
   m_IsPrefabAsset: 0
