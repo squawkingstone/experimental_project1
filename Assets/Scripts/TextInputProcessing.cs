@@ -43,22 +43,24 @@ public class Node
 		{
 			if (t.inputs.Count == 0)
 			{
-				if (t.scene_transition != "") { SceneManager.LoadScene(t.scene_transition); }
-				foreach (string m in t.messages) { event_manager.Invoke(m); }
-				return t.outputs[Random.Range(0, t.outputs.Count)];
+				TriggerTransition(t, event_manager);
 			}
 			foreach (string i in t.inputs)
 			{
 				if (i.ToLower() == input.ToLower())
 				{
-					// select an output, trigger any events, and do any scene transitions
-					if (t.scene_transition != "") { SceneManager.LoadScene(t.scene_transition); }
-					foreach (string m in t.messages) { event_manager.Invoke(m); }
-					return t.outputs[Random.Range(0, t.outputs.Count)];
+					TriggerTransition(t, event_manager);
 				}
 			}
 		}
 		return "";
+	}
+
+	private string TriggerTransition(Transition t, EventManager event_manager)
+	{
+		if (t.scene_transition != "") { SceneManager.LoadScene(t.scene_transition); }
+		foreach (string m in t.messages) { event_manager.Invoke(m); }
+		return t.outputs[Random.Range(0, t.outputs.Count)];
 	}
 }
 
