@@ -80,7 +80,6 @@ public class TextInputProcessing : MonoBehaviour {
 	void Start () 
 	{
 		graph = XMLParser.xmlParse();
-		Debug.Log("START");
 		input.onEndEdit.AddListener(
 			(value) => {
 				TryNodeTransition(value);
@@ -102,7 +101,11 @@ public class TextInputProcessing : MonoBehaviour {
 	// trys to use the input to transition to a new text node
 	void TryNodeTransition(string input)
 	{
-		
+		if (input.ToLower() == "quit" || input.ToLower() == "exit")
+		{
+			Application.Quit();
+			return;
+		}
 		string n = graph[current_node].GetNextNode(input, event_manager);
 		if (n != "")
 		{
