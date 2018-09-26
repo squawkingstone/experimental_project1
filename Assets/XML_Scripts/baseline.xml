@@ -90,7 +90,18 @@
     <text>I grab a bowl and a box of cereal. Not the healthiest, but its quick. I open the fridge, but there's no milk. I make a mental note to buy more milk as I crunch the dry cereal. Now what should I do now?
     </text>
     <transition>
-      <output>WakeUp</output>
+      <input>Eat Breakfast</input>
+      <output>Breakfast</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
+      <input>Brush my teeth</input>
+      <output>teeth</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
+      <input>Get dressed</input>
+      <output>dressed</output>
       <scene_trans>-1</scene_trans>
     </transition>
   </node>
@@ -98,7 +109,18 @@
     <name>teeth</name>
     <text>I grab my toothbrush and squeeze some toothpaste onto it. I brush all the crud off my teeth quickly. After I rinse my mouth out, I check myself in the mirror. I comb my fingers through my hair quickly, before deciding I look fine. Now what should I do?</text>
     <transition>
-      <output>WakeUp</output>
+      <input>Eat Breakfast</input>
+      <output>Breakfast</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
+      <input>Brush my teeth</input>
+      <output>teeth</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
+      <input>Get dressed</input>
+      <output>dressed</output>
       <scene_trans>-1</scene_trans>
     </transition>
   </node>
@@ -107,7 +129,18 @@
     <text>I grab some jeans out of the closet and put them on.I look at my selection of identical work shirts and sigh. I just grab the first one and put it on. Now what should I do?
     </text>
     <transition>
-      <output>WakeUp</output>
+      <input>Eat Breakfast</input>
+      <output>Breakfast</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
+      <input>Brush my teeth</input>
+      <output>teeth</output>
+      <scene_trans>-1</scene_trans>
+    </transition>
+    <transition>
+      <input>Get dressed</input>
+      <output>dressed</output>
       <scene_trans>-1</scene_trans>
     </transition>
   </node>
