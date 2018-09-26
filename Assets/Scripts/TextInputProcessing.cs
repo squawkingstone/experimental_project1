@@ -43,13 +43,13 @@ public class Node
 		{
 			if (t.inputs.Count == 0)
 			{
-				TriggerTransition(t, event_manager);
+				return TriggerTransition(t, event_manager);
 			}
 			foreach (string i in t.inputs)
 			{
 				if (i.ToLower() == input.ToLower())
 				{
-					TriggerTransition(t, event_manager);
+					return TriggerTransition(t, event_manager);
 				}
 			}
 		}
