@@ -34,7 +34,7 @@ public class XMLParser {
 							trans.outputs.Add(t.InnerText);
 						}
 						if(t.Name == "scene_trans"){
-							trans.scene_transition = System.Convert.ToInt32(t.InnerText);
+							trans.scene_transition = t.InnerText;
 						}
 						if(t.Name == "message"){
 							trans.messages.Add(t.InnerText);
