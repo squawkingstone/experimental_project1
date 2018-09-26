@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nodes>
+   <node>
+    <name>Title</name>
+    <text> Unwritten</text>
+    <transition>
+      <input>Start</input>
+      <output>Start</output>
+    </transition>
+  </node>
   <node>
     <name>Start</name>
     <text> Before we begin this game, we would like to make sure we represent you as closely as possible in this game. So, we’d like to know what you look like. What gender are you?</text>
