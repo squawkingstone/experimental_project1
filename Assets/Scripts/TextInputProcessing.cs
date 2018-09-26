@@ -43,6 +43,8 @@ public class Node
 		{
 			if (t.inputs.Count == 0)
 			{
+				if (t.scene_transition != "") { SceneManager.LoadScene(t.scene_transition); }
+				foreach (string m in t.messages) { event_manager.Invoke(m); }
 				return t.outputs[Random.Range(0, t.outputs.Count)];
 			}
 			foreach (string i in t.inputs)
