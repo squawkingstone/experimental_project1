@@ -9,7 +9,7 @@ public class Transition
 {
 	public List<string> inputs;   // the strings that can be entered to trigger this transition
 	public List<string> outputs;  // the nodes the transition can go to
-	public int scene_transition;  // the scene to transition to if this transition triggers a scene 
+	public string scene_transition;  // the scene to transition to if this transition triggers a scene 
 								  // change, defaults to -1 (no change)
 	public List<string> messages; // a list of messages to get sent on transition. This is supposed to
 								  // basically just give a way to call functions and trigger events in
@@ -18,7 +18,7 @@ public class Transition
 	{
 		inputs = new List<string>();
 		outputs = new List<string>();
-		scene_transition = -1;
+		scene_transition = "";
 		messages = new List<string>();
 	}
 }
@@ -50,7 +50,7 @@ public class Node
 				if (i.ToLower() == input.ToLower())
 				{
 					// select an output, trigger any events, and do any scene transitions
-					if (t.scene_transition != -1) { SceneManager.LoadScene(t.scene_transition); }
+					if (t.scene_transition != "") { SceneManager.LoadScene(t.scene_transition); }
 					foreach (string m in t.messages) { event_manager.Invoke(m); }
 					return t.outputs[Random.Range(0, t.outputs.Count)];
 				}

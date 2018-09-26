@@ -5,7 +5,6 @@
     <text> Before we begin this game, we would like to make sure we represent you as closely as possible in this game. So, we’d like to know what you look like. What gender are you?</text>
     <transition>
       <output>Start2</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -13,7 +12,6 @@
     <text> Alright. How tall are you?</text>
     <transition>
       <output>Start3</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -21,7 +19,6 @@
     <text> I see. Now, what color are your eyes?</text>
     <transition>
       <output>Start4</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -29,7 +26,6 @@
     <text> Oh, stunning! And what color is your hair?</text>
     <transition>
       <output>Start5</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -37,7 +33,6 @@
     <text> A perfect match for your eyes. How long is your hair?</text>
     <transition>
       <output>Start6</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -53,7 +48,6 @@
     <text>Lovely! Any other identifying features?</text>
     <transition>
       <output>Start8</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -62,7 +56,7 @@
     </text>
     <transition>
       <output>WakeUp</output>
-      <scene_trans>1</scene_trans>
+      <scene_trans>Bedroom</scene_trans>
     </transition>
   </node>
   <node>
@@ -72,17 +66,14 @@
     <transition>
       <input>Eat Breakfast</input>
       <output>Breakfast</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>Brush my teeth</input>
       <output>teeth</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>Get dressed</input>
       <output>dressed</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -90,16 +81,32 @@
     <text>I grab a bowl and a box of cereal. Not the healthiest, but its quick. I open the fridge, but there's no milk. I make a mental note to buy more milk as I crunch the dry cereal. Now what should I do now?
     </text>
     <transition>
-      <output>WakeUp</output>
-      <scene_trans>-1</scene_trans>
+      <input>Eat Breakfast</input>
+      <output>Breakfast</output>
+    </transition>
+    <transition>
+      <input>Brush my teeth</input>
+      <output>teeth</output>
+    </transition>
+    <transition>
+      <input>Get dressed</input>
+      <output>dressed</output>
     </transition>
   </node>
   <node>
     <name>teeth</name>
     <text>I grab my toothbrush and squeeze some toothpaste onto it. I brush all the crud off my teeth quickly. After I rinse my mouth out, I check myself in the mirror. I comb my fingers through my hair quickly, before deciding I look fine. Now what should I do?</text>
     <transition>
-      <output>WakeUp</output>
-      <scene_trans>-1</scene_trans>
+      <input>Eat Breakfast</input>
+      <output>Breakfast</output>
+    </transition>
+    <transition>
+      <input>Brush my teeth</input>
+      <output>teeth</output>
+    </transition>
+    <transition>
+      <input>Get dressed</input>
+      <output>dressed</output>
     </transition>
   </node>
   <node>
@@ -107,8 +114,16 @@
     <text>I grab some jeans out of the closet and put them on.I look at my selection of identical work shirts and sigh. I just grab the first one and put it on. Now what should I do?
     </text>
     <transition>
-      <output>WakeUp</output>
-      <scene_trans>-1</scene_trans>
+      <input>Eat Breakfast</input>
+      <output>Breakfast</output>
+    </transition>
+    <transition>
+      <input>Brush my teeth</input>
+      <output>teeth</output>
+    </transition>
+    <transition>
+      <input>Get dressed</input>
+      <output>dressed</output>
     </transition>
   </node>
   <node>
@@ -117,7 +132,7 @@
     </text>
     <transition>
       <output>AtWork</output>
-      <scene_trans>2</scene_trans>
+      <scene_trans>Mart</scene_trans>
     </transition>
   </node>
   <node>
@@ -126,7 +141,6 @@
     </text>
     <transition>
       <output>5Dollar</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -136,7 +150,6 @@
     <transition>
       <input>Scan items</input>
       <output>Scanning</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -145,7 +158,6 @@
     </text>
     <transition>
       <output>Afternoon</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -155,17 +167,14 @@
     <transition>
       <input>clean the store</input>
       <output>clean</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>restock</input>
       <output>restock</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>read</input>
       <output>read</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -174,7 +183,6 @@
     </text>
     <transition>
       <output>lunch</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -183,7 +191,6 @@
     </text>
     <transition>
       <output>lunch</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -192,7 +199,6 @@
     </text>
     <transition>
       <output>lunch</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -202,17 +208,14 @@
     <transition>
       <input>clean the store</input>
       <output>clean2</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>restock</input>
       <output>restock2</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>read</input>
       <output>read2</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -221,7 +224,6 @@
       </text>
     <transition>
       <output>evening</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -230,7 +232,6 @@
     </text>
     <transition>
       <output>evening</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -239,7 +240,6 @@
     </text>
     <transition>
       <output>evening</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -248,7 +248,7 @@
     </text>
     <transition>
       <output>dinner</output>
-      <scene_trans>1</scene_trans>
+      <scene_trans>Bedroom</scene_trans>
     </transition>
   </node>
   <node>
@@ -258,12 +258,10 @@
     <transition>
       <input>microwave meal</input>
       <output>microwave</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>make from scratch</input>
       <output>scratch</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -272,7 +270,6 @@
     </text>
     <transition>
       <output>ToBed</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -281,7 +278,6 @@
     </text>
     <transition>
       <output>ToBed</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -291,17 +287,14 @@
     <transition>
       <input>brush my teeth</input>
       <output>brush</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>take a shower</input>
       <output>shower</output>
-      <scene_trans>-1</scene_trans>
     </transition>
     <transition>
       <input>put on pjs</input>
       <output>jammies</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -310,7 +303,6 @@
     </text>
     <transition>
       <output>ToBed</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -319,7 +311,6 @@
     </text>
     <transition>
       <output>ToBed</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -328,7 +319,6 @@
     </text>
     <transition>
       <output>ToBed</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
   <node>
@@ -337,7 +327,6 @@
     </text>
     <transition>
       <output>WakeUp</output>
-      <scene_trans>-1</scene_trans>
     </transition>
   </node>
 </nodes>
