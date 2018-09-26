@@ -5,6 +5,8 @@
     <text> Unwritten</text>
     <transition>
       <input>Start</input>
+      <input>Begin</input>
+      <input>Play</input>
       <output>Start</output>
       <scene_trans>Beginning</scene_trans>
     </transition>
@@ -73,14 +75,24 @@
     </text>
     <transition>
       <input>Eat Breakfast</input>
+      <input>Breakfast</input>
+      <input>Eat</input>
+      <input>Eat food</input>
+      <input>Food</input>
       <output>Breakfast</output>
     </transition>
     <transition>
       <input>Brush my teeth</input>
+      <input>Brush Teeth</input>
+      <input>Teeth</input>
       <output>teeth</output>
     </transition>
     <transition>
       <input>Get dressed</input>
+      <input>Dress</input>
+      <input>Put on Clothes</input>
+      <input>Clothe self</input>
+      <input>Clothes</input>
       <output>dressed</output>
     </transition>
   </node>
@@ -90,14 +102,24 @@
     </text>
     <transition>
       <input>Eat Breakfast</input>
+      <input>Breakfast</input>
+      <input>Eat</input>
+      <input>Eat food</input>
+      <input>Food</input>
       <output>Breakfast</output>
     </transition>
     <transition>
       <input>Brush my teeth</input>
+      <input>Brush Teeth</input>
+      <input>Teeth</input>
       <output>teeth</output>
     </transition>
     <transition>
       <input>Get dressed</input>
+      <input>Dress</input>
+      <input>Put on Clothes</input>
+      <input>Clothe self</input>
+      <input>Clothes</input>
       <output>dressed</output>
     </transition>
   </node>
@@ -106,14 +128,24 @@
     <text>I grab my toothbrush and squeeze some toothpaste onto it. I brush all the crud off my teeth quickly. After I rinse my mouth out, I check myself in the mirror. I comb my fingers through my hair quickly, before deciding I look fine. Now what should I do?</text>
     <transition>
       <input>Eat Breakfast</input>
+      <input>Breakfast</input>
+      <input>Eat</input>
+      <input>Eat food</input>
+      <input>Food</input>
       <output>Breakfast</output>
     </transition>
     <transition>
       <input>Brush my teeth</input>
+      <input>Brush Teeth</input>
+      <input>Teeth</input>
       <output>teeth</output>
     </transition>
     <transition>
       <input>Get dressed</input>
+      <input>Dress</input>
+      <input>Put on Clothes</input>
+      <input>Clothe self</input>
+      <input>Clothes</input>
       <output>dressed</output>
     </transition>
   </node>
@@ -123,14 +155,24 @@
     </text>
     <transition>
       <input>Eat Breakfast</input>
+      <input>Breakfast</input>
+      <input>Eat</input>
+      <input>Eat food</input>
+      <input>Food</input>
       <output>Breakfast</output>
     </transition>
     <transition>
       <input>Brush my teeth</input>
+      <input>Brush Teeth</input>
+      <input>Teeth</input>
       <output>teeth</output>
     </transition>
     <transition>
       <input>Get dressed</input>
+      <input>Dress</input>
+      <input>Put on Clothes</input>
+      <input>Clothe self</input>
+      <input>Clothes</input>
       <output>dressed</output>
     </transition>
   </node>
@@ -157,6 +199,11 @@
     </text>
     <transition>
       <input>Scan items</input>
+      <input>Scan item</input>
+      <input>Scan</input>
+      <input>Take items</input>
+      <input>Scan his items</input>
+      <input>Scan the items</input>
       <output>Scanning</output>
     </transition>
   </node>
@@ -174,14 +221,23 @@
     </text>
     <transition>
       <input>clean the store</input>
+      <input>Clean</input>
+      <input>Clean Store</input>
       <output>clean</output>
     </transition>
     <transition>
       <input>restock</input>
+      <input>Restock items</input>
+      <input>Stock</input>
+      <input>Stock items</input>
       <output>restock</output>
     </transition>
     <transition>
       <input>read</input>
+      <input>Read magazine</input>
+      <input>Read book</input>
+      <input>Read a magazine</input>
+      <input>Read a book</input>
       <output>read</output>
     </transition>
   </node>
@@ -215,14 +271,23 @@
     </text>
     <transition>
       <input>clean the store</input>
+      <input>Clean</input>
+      <input>Clean Store</input>
       <output>clean2</output>
     </transition>
     <transition>
       <input>restock</input>
+      <input>Restock items</input>
+      <input>Stock</input>
+      <input>Stock items</input>
       <output>restock2</output>
     </transition>
     <transition>
       <input>read</input>
+      <input>Read magazine</input>
+      <input>Read book</input>
+      <input>Read a magazine</input>
+      <input>Read a book</input>
       <output>read2</output>
     </transition>
   </node>
@@ -265,10 +330,18 @@
     </text>
     <transition>
       <input>microwave meal</input>
+      <input>microwave</input>
+      <input>nuke meal</input>
+      <input>microwave food</input>
       <output>microwave</output>
     </transition>
     <transition>
       <input>make from scratch</input>
+      <input>make food from scratch</input>
+      <input>cook from scratch</input>
+      <input>cook food from scratch</input>
+      <input>make something from scratch</input>
+      <input>make something</input>
       <output>scratch</output>
     </transition>
   </node>
@@ -294,14 +367,26 @@
     </text>
     <transition>
       <input>brush my teeth</input>
+      <input>Brush Teeth</input>
+      <input>Teeth</input>
       <output>brush</output>
     </transition>
     <transition>
       <input>take a shower</input>
+      <input>Shower</input>
+      <input>Take shower</input>
+      <input>bathe</input>
       <output>shower</output>
     </transition>
     <transition>
       <input>put on pjs</input>
+      <input>put on pajamas</input>
+      <input>get dressed</input>
+      <input>dress</input>
+      <input>get dressed for bed</input>
+      <input>dress for bed</input>
+      <input>put on jammies</input>
+      <input>put on pj's</input>
       <output>jammies</output>
     </transition>
   </node>
