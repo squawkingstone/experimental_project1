@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mart.unity
     guid: 4f964724007cf624ea04bd03a965d60d
+  - enabled: 1
+    path: Assets/Scenes/Bedroom2.unity
+    guid: f2be65b3a91ab064896eaab8ffee5913
   m_configObjects: {}
